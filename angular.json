@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "4851f1b9-7204-4e32-966c-fb06c9233422"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -33,7 +36,10 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [{
+              "input": "index.js",
+              "inject": false
+            }]
           },
           "configurations": {
             "production": {
@@ -53,6 +59,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "index.js",
+                  "with": "index.prod.js"
                 }
               ],
               "outputHashing": "all"
@@ -107,5 +117,6 @@
       }
     }
   },
-  "defaultProject": "sorter-angular"
+  "defaultProject": "sorter-angular",
+
 }
